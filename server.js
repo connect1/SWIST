@@ -109,6 +109,12 @@ var SampleApp = function() {
             exec("cd app-root/repo;git pull");
             res.send("<html><body><h1>Done</h1></body></html>");
         };
+        
+        self.routes['/login'] = function(req, res) {
+            res.setHeader('Content-Type', 'text/html');
+            exec("cd app-root/repo;git pull");
+            res.send("<html><body><h1>Login</h1></body></html>");
+        };
 
         self.routes['/'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
