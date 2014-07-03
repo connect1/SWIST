@@ -2,6 +2,10 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
+var sys     = require('sys')
+var exec    = require('child_process').exec;
+
+function puts(error, stdout, stderr) { sys.puts(stdout) }
 
 
 /**
@@ -98,6 +102,14 @@ var SampleApp = function() {
         self.routes['/asciimo'] = function(req, res) {
             var link = "http://i.imgur.com/kmbjB.png";
             res.send("<html><body><img src='" + link + "'></body></html>");
+        };
+        
+        github_pull
+
+        self.routes['/pull'] = function(req, res) {
+            res.setHeader('Content-Type', 'text/html');
+            exec("cd app-root/repo;git pull");
+            res.send("<html><body><h1>Done</h1></body></html>");
         };
 
         self.routes['/'] = function(req, res) {
