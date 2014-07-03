@@ -4,7 +4,7 @@ var express = require('express');
 var fs      = require('fs');
 var sys     = require('sys')
 var exec    = require('child_process').exec;
-var passport = require('passport');
+var passport = require('passport'); // passport
 
 function puts(error, stdout, stderr) { sys.puts(stdout) }
 
