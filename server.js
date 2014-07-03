@@ -104,8 +104,6 @@ var SampleApp = function() {
             res.send("<html><body><img src='" + link + "'></body></html>");
         };
         
-        github_pull
-
         self.routes['/pull'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             exec("cd app-root/repo;git pull");
